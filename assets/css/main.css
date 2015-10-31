@@ -1,3 +1,8 @@
+body {
+  font-family: lora;
+  /*font-weight: lighter;*/
+}
+
 .hero {
   height: 100vh;
   overflow: hidden;
@@ -179,6 +184,7 @@
 
 .timeline-item-text h3 {
   margin-top: 0;
+  margin-bottom: 10px;
 }
 
 .events {
@@ -224,6 +230,8 @@
   text-decoration: none;
   border-bottom: 1px solid transparent;
   transition: .3s;
+  font-family: cookie;
+  font-size: 26px;
 }
 
 .event-maps a:hover {
@@ -302,4 +310,26 @@
   color: #e7605a;
   font-family: cookie;
   text-align: center;
+}
+
+.slick-arrow {
+  width: 21px;
+  height: 32px;
+  display: block;
+  position: absolute;
+  top: 50%;
+  margin-top: -16px;
+  background: none;
+  border: none;
+  text-indent: -9999px;
+}
+
+.slick-prev {
+  left: -35px;
+  background-image: url(../images/arrow-left.png);
+}
+
+.slick-next {
+  right: -35px;
+  background-image: url(../images/arrow-right.png);
 }
