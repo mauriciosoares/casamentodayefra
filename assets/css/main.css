@@ -260,6 +260,16 @@
   width: 100%;
 }
 
+.form-line input[type="submit"] {
+  background-color: #418bca;
+  border: none;
+  border-bottom: 3px solid #225A8A;
+  color: white;
+  font-weight: bold;
+  padding: 8px;
+  width: 389px;
+}
+
 .form-line textarea {
   height: 150px;
 }
