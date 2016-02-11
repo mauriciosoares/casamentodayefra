@@ -189,6 +189,7 @@ body {
 .events {
   overflow: hidden;
   color: #7b7b7b;
+  font-size: 14px;
 }
 
 .events p {
