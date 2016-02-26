@@ -14,5 +14,77 @@ countdownWedding();
 $('.slider').slick({
   lazyLoad: 'ondemand',
   dots: true,
-  accessibility: false
+  accessibility: false,
+  adaptiveHeight: true
 });
+
+$form = $('#invites-form');
+
+$form.on('submit', function(e) {
+  e.preventDefault();
+
+  var fieldsMapper = {
+    name: 'entry.116548681',
+    email: 'entry.1901040101',
+    'invited-adult': 'entry.819151648',
+    'invited-10-5': 'entry.506032134',
+    'invited-5': 'entry.161800526',
+    'message': 'entry.763267898'
+  };
+
+  var fields = {
+    name: $('[name="name"]').val(),
+    email: $('[name="email"]').val(),
+    'invited-adult': $('[name="invited-adult"]').val(),
+    'invited-10-5': $('[name="invited-10-5"]').val(),
+    'invited-5': $('[name="invited-5"]').val(),
+    'message': $('[name="message"]').val()
+  };
+
+  var check = true;
+  for(var key in fields) {
+    if(!check) return;
+    if(!fields[key]) {
+      alert('Por favor, preencha todos os campos');
+      check = false;
+    }
+  }
+
+  if(!check) return;
+
+  submitGoogleForm(fields, fieldsMapper, 'google-form');
+
+  $('.submit-container').html('<img src="assets/images/loader.gif" />');
+  setTimeout(function() {
+    $form.html('<div class="thanks">Obrigado por confirmar sua presença</div>')
+  }, 4000);
+});
+
+function submitGoogleForm(fields, mapper, googleFormId) {
+  var formData = Object.keys(mapper).reduce((data, key) => {
+    data[mapper[key]] = fields[key];
+    return data;
+  }, {});
+
+  var googleForm = document.getElementById(googleFormId);
+  if (googleForm === null) {
+    throw new Error('You must have an embedded iframe with your Google Form');
+  }
+
+  var form = document.createElement('form');
+  form.action = googleForm.src.replace('viewform', 'formResponse');
+  form.method = 'POST';
+  form.target = googleFormId;
+  form.style = 'display: none';
+
+  Object.keys(formData).forEach(key => {
+    var field = document.createElement('input');
+    field.name = key;
+    field.value = formData[key];
+    form.appendChild(field);
+  });
+
+  document.body.appendChild(form);
+  form.submit();
+  document.body.removeChild(form);
+}

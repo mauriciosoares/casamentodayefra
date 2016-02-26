@@ -201,9 +201,8 @@ body {
 }
 
 .events-event {
-  float: left;
-  width: 48%;
-  margin: 1%;
+  width: 60%;
+  margin: auto;
 }
 
 .event-title {
@@ -262,6 +261,7 @@ body {
   width: 365px;
   margin: auto;
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .form-line input, .form-line textarea {
@@ -334,4 +334,32 @@ body {
 .slick-next {
   right: -35px;
   background-image: url(../images/arrow-right.png);
+}
+
+.thanks {
+  color: white;
+  text-align: center;
+  font-size: 24px;
+}
+
+.player {
+  width: 65px;
+  height: 65px;
+  overflow: hidden;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border-radius: 50%;
+}
+.player iframe {
+  margin-top: -4px;
+}
+
+.gifts {
+  text-align: center;
+  letter-spacing: 20px;
+}
+
+.gifts a {
+  text-decoration: none;
 }
