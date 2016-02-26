@@ -61,7 +61,7 @@ $form.on('submit', function(e) {
 });
 
 function submitGoogleForm(fields, mapper, googleFormId) {
-  var formData = Object.keys(mapper).reduce((data, key) => {
+  var formData = Object.keys(mapper).reduce(function(data, key) {
     data[mapper[key]] = fields[key];
     return data;
   }, {});
@@ -77,7 +77,7 @@ function submitGoogleForm(fields, mapper, googleFormId) {
   form.target = googleFormId;
   form.style = 'display: none';
 
-  Object.keys(formData).forEach(key => {
+  Object.keys(formData).forEach(function(key) {
     var field = document.createElement('input');
     field.name = key;
     field.value = formData[key];
