@@ -1,7 +1,7 @@
 setInterval(countdownWedding, 1000);
 
 function countdownWedding() {
-  var c = moment("2016-11-13").countdown();
+  var c = moment("2016-11-13 17:00:00").countdown();
   document.getElementById('months').innerText = c.months;
   document.getElementById('days').innerText = c.days;
   document.getElementById('hours').innerText = c.hours;
