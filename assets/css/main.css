@@ -343,17 +343,14 @@ body {
 }
 
 .player {
-  width: 65px;
-  height: 65px;
   overflow: hidden;
   position: fixed;
   bottom: 20px;
   right: 20px;
-  border-radius: 50%;
   z-index: 10;
 }
 .player iframe {
-  margin-top: -4px;
+
 }
 
 .gifts {
