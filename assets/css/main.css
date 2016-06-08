@@ -367,3 +367,9 @@ body {
   margin: .5%;
   display: inline-block;
 }
+
+.parents-third {
+  width: 32%;
+  margin: .3%;
+  display: inline-block;
+}
